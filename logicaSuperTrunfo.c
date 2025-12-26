@@ -1,65 +1,10 @@
-#include <stdio.h>
+#include  <stdio.h> // Inclui a biblioteca padrão de entrada e saída
 
-// Desafio Super Trunfo - Países
-// Tema 2 - Comparação das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de comparação de cartas de cidades. 
-// Siga os comentários para implementar cada parte do desafio.
+int main (){
 
-int main() {
-    // Definição das variáveis para armazenar as propriedades das cidades
-    // Você pode utilizar o código do primeiro desafio
+    int escolhardojogador;
 
-    
-    // Cadastro das Cartas:
-    // Implemente a lógica para solicitar ao usuário que insira os dados das cidades
-    // utilizando a função scanf para capturar as entradas.
-    // utilize o código do primeiro desafio
-
-    // Exemplo:
-    // printf("Digite o código da cidade: ");
-    // scanf("%s", codigo);
-    // 
-    // (Repita para cada propriedade)
-
-    // Comparação de Cartas:
-    // Desenvolva a lógica de comparação entre duas cartas.
-    // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
-
-    // Exemplo:
-    // if (populacaoA > populacaoB) {
-    //     printf("Cidade 1 tem maior população.\n");
-    // } else {
-    //     printf("Cidade 2 tem maior população.\n");
-    // }
-
-    // Exibição dos Resultados:
-    // Após realizar as comparações, exiba os resultados para o usuário.
-    // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
-
-    // Exemplo:
-    // printf("A cidade vencedora é: %s\n", cidadeVencedora);
-
-
-//Nesse programa vamos começar definido as variaveis, 
-
-//O que são variáveis?
-
-//Pense nas variáveis como caixas onde você pode armazenar informações. Cada caixa tem um nome, e você pode usar esse nome para colocar algo dentro dela ou pegar o que está lá. Em programação, essas caixas são usadas para guardar valores que podem mudar enquanto o programa está rodando.
-
-//Nesse vamos usar esse variaveis abaixo;
-
-//int ;     // Declara uma variável inteira chamada - populaçõa, númerodepontosturísticos, populaçõa2, númerodepontosturísticos2
- 
-//float ;   // Declara uma variável de ponto flutuante chamada - área, pib e área2, pib2
- 
-//double ; // Declara uma variável de ponto flutuante de dupla precisão chamada 
- 
-//char ;    // Declara uma variável de caractere chamada - Estado, codigo[3], nomedacidade[20] e Estado, codigo2[3], nomedacidade2[20]
-
-//
-
-    // Variaveis da carta 1
-
+    // Carta 1
     char Estado; // variavel que vai armazenar os dados do estado que será uma letra da cidade 1.
     char codigo[4];  // variavel que vai armazenar os dados do codigo do cidade 1.
     char nome_cidade[20]; // variavel que vai armazenar os dados do nome da cidade 1.
@@ -70,11 +15,9 @@ int main() {
     float DensidadePopulacional;  // variavel que vai armazenar o calculo da Densidade Populacional da cidade 1.
     float PIBperCapita;  // variavel que vai armazenar o calculo do PIB per Capita da cidade 1.
 
-    //  Da para notar que na variavel "char" usamos o colchetes "[ ]" isso serve para indicar o tamanho da variavel,
-    // nesse caso a variavel "codigo" tem o tamanho de 3 caracteres e a variavel "nome_cidade " tem o tamanho de 20 caracteres. 
+    //  Na variavel "char" usamos os colchetes "[...]" isso serve para indicar o tamanho maximo da variavel, nesse caso a variavel "codigo" tem o tamanho maximo de 4 caracteres e a "nome_cidade " tem 20 caracteres. 
 
-    // variaveis da carta 2
-
+    // Carta 2 
     char Estado2; // variavel que vai armazenar os dados do estado que será uma letra da cidade 2.
     char codigo2[4]; // variavel que vai armazenar os dados do codigo da cidade 2.
     char nome_cidade2[20]; // variavel que vai armazenar os dados do nome da cidade 2.
@@ -85,32 +28,154 @@ int main() {
     float DensidadePopulacional2; // variavel que vai armazenar o calculo da Densidade Populacional da cidade 2.
     float PIBperCapita2; // variavel que vai armazenar o calculo do PIB per Capita da cidade 2.
 
-    //Depois de determinar as variaveis vamos para a parte de entrada e saída.
+    // Menu de opções para o jogador escolher o modo de jogo.
+    printf("Bem vindo ao Super Trunfo de Cidades!\n\n");
+    printf("Escolha Umas das Opções para seguir:\n"); // Menu de opções para o jogador.
+    printf("1 - jogar\n"); // Opção 1 do menu. jogar com uma caracteristica escolhida pelo jogador.
+    printf("2 - jogar com todas as caracteristicas\n"); // Opção 2 do menu. jogar com todas as caracteristicas.
+    printf("3 - regras.\n");   // Opção 3 do menu. Exibir as regras do jogo.
+    printf("4 - sair\n"); //    Opção 4 do menu. Sair do jogo.
+    printf("Digite o número correspondente à sua escolha: ");  // Solicita ao jogador que digite sua escolha.
+    scanf("%d", &escolhardojogador); // Lê a escolha do jogador e armazena na variavel escolhardojogador.
 
-    // vamos usar os codigos "printf" e "scanf" para isso.
+    // Estrutura switch para lidar com a escolha do jogador. switch case. funciona como uma série de if else. 
+    // o jogador escolhe uma opção e o sistema executa o código correspondente na case de acordo com número.
 
-    // "printf" e usado para exibir as infornações na tela do usuario (saída), 
-    // quando usar esse codigo devemos coloca abrir parecentes "(" e colocar aspas e fechar aspas "" e depois 
-    // fechar os parenteres ")" e depois colocar ponto e virgula ";", 
-    // ( serve para indicar o fim da linha de codigo quase todo codigo em C termina assim), EXEMPLO; printf("OLá mundo"); 
-    // se tudo estiver certo o que estiver dentros das aspas será exibido para o usuario.
+    switch (escolhardojogador) {
+        case 1: 
 
-    // "scanf" Serve para escaniar o que o usuario digita no teclado, para usar ele e bem parecido 
-    //  com o printf, você vai ter que abrir parenteses e abrir aspas dentro dos parenteses e ponto 
-    // e virgula para indicar que o codigo encerrou. dentro das aspas você vai ter que colocar os 
-    // formatos das variares, e colocar uma virgula depois de fecha aspas dando um espaço e logo apos um "e" comercial & junto com o nome da variavel.
+        printf("Antes vamos ditar o nome das Cidades!.\n");
 
-    // sempre seguindo esse orgem: scanf(''formato'', &variavel);
+        printf("Digite O nome da cidade 1 apenas um nome ou todas as palavras juntas: \n");
+        scanf("%s", nome_cidade); // Nesse caso podemos notar que não colocamos o & comercial pois foi usado  formaro %s.
 
-    // a uma ocasião aonde não se coloca  o & comercial junto com o nome da variavel, e quando você
-    // for usar o formato %s (string) para pegar textos, nesse caso você não usa o & comercial.
+        printf("Digite O nome da cidade 2 apenas um nome ou todas as palavras juntas: \n");
+        scanf("%s", nome_cidade2); // Nesse caso podemos notar que não colocamos o & comercial pois foi usado  formaro %s.
 
-    // EXEMPLO: Scanf(%d, &Estado1); , Nesse casos %d e o indicado de formato.
+        printf("Agora escolha qual caracteristica vai ser a rodada.\n");
 
-    //sempre segindo essa ordem 
+            printf("Esclha qual das caracteristica vai ser a rodada.\n");
+            printf("1 - População\n");
+            printf("2 - Área\n");
+            printf("3 - PIB\n");     
+            printf("4 - Número de Pontos Turísticos\n");
+            printf("5 - Densidade Populacional\n");
+            printf("Digite o número correspondente à sua escolha: "); 
+            scanf("%d", &escolhardojogador);
+
+            switch (escolhardojogador) {
+                case 1: // case 1 População 
+
+                    printf("Digite O número de habitantes da cidade 1: \n");
+                    scanf("%lu", &população);
+
+                    printf("Digite O número de habitantes da cidade 2: \n");
+                    scanf("%lu", &população2);
+
+                    printf(" %s X %s \n", nome_cidade, nome_cidade2);
+
+                    printf("A maior população vence! \n");
+
+                    printf(" %lu X %lu \n", população, população2);
+
+                    if ( população == população2 ) { printf(" Empate (1)\n"); } //if else usado para fazer decisões no codigo.
+                    else if (população > população2){ printf("%s venceu\n", nome_cidade);} else { printf("%s venceu\n", nome_cidade2);} //else usado para definir o que acontece se a condição do if for falsa.
+                    // estrutura aninhada if else. um if else dentro de outro if else.
+
+                    break; // break e usado para sair do switch case depois que uma case e executada.
+                case 2: // case 2 Área
+
+                    printf("Digite A área da cidade em quilômetros quadrados(em km²): \n");
+                    scanf("%f", &área);
+
+                    printf("Digite A área da cidade em quilômetros quadrados(em km²): \n");
+                    scanf("%f", &área2);
+
+                    printf(" %s X %s \n", nome_cidade, nome_cidade2);
+
+                    printf("A maior área vence! \n");
+
+                    printf(" %f X %f \n", área, área2);
+ 
+                    if ( área > área2 ) { printf("%s venceu (1)\n", nome_cidade); } else if (área == área2 ){ printf("Empate (1)\n");} 
+                    else{ printf("%s venceu!\n", nome_cidade2);}
+
+                    break;
+                case 3:
+
+                    printf("Digite o Produto Interno Bruto PIB da cidade 1, coloque o numero em bilhões e apenas um ponto segindo o EXEMPLO; 699.28...: \n");
+                    scanf("%f", &pib);
+
+                    printf("Digite o Produto Interno Bruto PIB da cidade 2, coloque o numero em bilhões e apenas um ponto segindo o EXEMPLO; 699.28...: \n");
+                    scanf("%f", &pib2);
+
+                    printf(" %s X %s \n", nome_cidade, nome_cidade2);
+
+                    printf("O maior PIB vence! \n");
+
+                    printf(" %f X %f \n", pib, pib2);
+
+                    if ( pib > pib2 ) { printf("Carta 1 venceu (1)\n"); } else if ( pib == pib2) { printf("Empate!\n"); }
+                    else{ printf("Carta 2 venceu!\n");}
+
+                    break;     
+                case 4:
+
+                    printf("Digite a quantidade de pontos turísticos da cidade: \n");
+                    scanf("%d", &númerodepontosturísticos ); 
+
+                    printf("Digite a quantidade de pontos turísticos da cidade: \n");
+                    scanf("%d", &númerodepontosturísticos2 );
+
+                    printf(" %s X %s \n", nome_cidade, nome_cidade2);
+
+                    printf("O maior numero de pontos turistico vence! \n");
+
+                    printf(" %d X %d \n", númerodepontosturísticos, númerodepontosturísticos2);
+
+                    printf ("Pontos Turísticos: "); if ( númerodepontosturísticos > númerodepontosturísticos2 ) { printf("Carta 1 venceu!\n"); } 
+                    else if( númerodepontosturísticos == númerodepontosturísticos2) { printf("Empate!\n");}  else { printf("Carta 2 venceu!\n"); }
+
+                    break;
+                case 5:
+
+                    printf("Digite O número de habitantes da cidade 1: \n");
+                    scanf("%lu", &população);
+
+                    printf("Digite O número de habitantes da cidade 2: \n");
+                    scanf("%lu", &população2);
+
+                    printf("Digite A área da cidade 1 em quilômetros quadrados(em km²): \n");
+                    scanf("%f", &área);
+
+                    printf("Digite A área da cidade 2 em quilômetros quadrados(em km²): \n");
+                    scanf("%f", &área2);
+
+                    DensidadePopulacional = (população / área); // calculo da Densidade Populacional da cidade 1. 
+                    DensidadePopulacional2 = (população2 / área2); // calculo da Densidade Populacional da cidade 2.
+
+                    printf(" %s X %s \n", nome_cidade, nome_cidade2);
+
+                    printf("A Menor dencidade populacional vence! \n");
+
+                    printf(" %.2f X %.2f \n", DensidadePopulacional, DensidadePopulacional2);
+
+                    if ( DensidadePopulacional == DensidadePopulacional2 ) { printf("Empate\n"); } 
+                    else if (DensidadePopulacional2 < DensidadePopulacional) { printf("Carta 2 venceu!\n"); } 
+                    else { printf("Carta 1 venceu!\n"); } 
+
+                    break;
+
+                default:
+                    printf("Opção inválida. Por favor, escolha uma opção válida.\n");
+
+            }
 
 
-    printf("Super Trunfo de Países\n\nNesse jogo você comparar duas cidades, o sistema vai pedir para você os dados de 2 cartas você vai colocar vai digitar os dados. começando pela carta 1.\n\nCarta 1\n\n");
+            break;
+        case 2:
+
+            printf("Super Trunfo de Países\n\nNesse jogo você comparar duas cidades, o sistema vai pedir para você os dados de 2 cartas você vai colocar vai digitar os dados. começando pela carta 1.\n\nCarta 1\n\n");
 
     // "\n" Serve para pular linha. isso deixa o codigo maisorganizado e mais facil de ler.
 
@@ -281,7 +346,22 @@ int main() {
 
     // Tudo estiver certo o sistema vai exibir os dados dgitados pelo o jogador.
 
-    return 0; // indica que o programa terminou com sucesso.
+            break;
+        case 3:
+            printf("REGRAS DO JOGO.\n");
+            printf("1 - O jogo consiste em comparar um características de duas cidades.\n");
+            printf("2 - compara varias caracteristicas das cartas.\n");
+            printf("3 - Todos os atributos ganha o maior, em exerção a dencidade populacional que ganhar o menor valor. \n");
+
+            break;
+            case 4:
+            printf("OBRIGADOR POR JOGAR!.\n");
+
+            break;
+            default:
+            printf("Opção inválida. Por favor, escolha 1, 2 ou 3.\n");
+    }
+
 
 }
 
